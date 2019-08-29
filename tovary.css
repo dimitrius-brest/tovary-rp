@@ -14,6 +14,10 @@ a:hover {
 	background-color: #a3e88a;
 }
 
+li > a {	
+	color: darkgreen;
+}
+
 .tovar {
 	text-align: center;
 	color: black;
