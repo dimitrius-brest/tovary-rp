@@ -1,0 +1,33 @@
+td {
+	vertical-align: top;
+}
+
+.pressed {
+	background-color: #a3e88a;
+}
+
+a {
+	cursor: pointer;
+}
+
+a:hover {
+	background-color: #a3e88a;
+}
+
+.tovar {
+	text-align: center;
+	color: black;
+	border: 1px solid #fff;
+	margin: 3px;
+	padding: 5px;
+	width: 120px;
+	height: 180px;
+	float: left;		
+}
+
+.tovar:hover {	
+	border: 1px solid #4c9b30;
+	cursor: pointer;
+	box-shadow: 0 7px 15px -3px rgba(0, 0, 0, 0.25);
+	transition: all 0.3s ease-in-out;
+}

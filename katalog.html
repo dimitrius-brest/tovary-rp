@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Товары Родовых поместий - каталог</title>	
+	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>	<!-- Библиотека jQuery -  	https://jquery.com/-->		
+	<script type="text/javascript" src="tovary.js"></script>
+	<script type="text/javascript" src="https://vk.com/js/api/openapi.js?162"></script> <!-- -->
+	<link rel="stylesheet" type="text/css" href="tovary.css">	<!-- Таблица стилей -->
+</head>
+<body>
+	
+	<p align="center">Каталог товаров:</p>
+
+	<!-- <p><a href="" name="tovar1">Товар 1</a></p>
+	<p><a href="" name="gruppa1">Группа товаров 1</a></p> -->	
+
+	<table border="1" cellpadding="5">
+		<tr>
+			<td>Выберите продавца:</td>
+			<td>Товары:</td>
+		</tr>
+		<tr>
+			<td>
+				<ul>
+					<li><a name="-93793008">Райский сад</a></li>
+					<li><a name="-128194899">Поместье Огородников</a></li>
+					<li><a name="-81509275">Мастерская деревянной живописи "ПинескЪ"</a></li>
+					<li><a name="-13916738">Мастерская по дереву "Добрый лес"</a></li>
+				</ul>
+				<hr>				
+				<p>Наша группа Вконтакте:</p>
+				<div id="vk_groups"></div>
+			</td>
+			<td id="pravo"></td>
+		</tr>			
+	</table>
+	<!-- VK Widget -->	
+	<script type="text/javascript">
+		VK.Widgets.Group("vk_groups", {mode: 3, width: "250", color1: 'E5F6DA', color3: '32753C'}, 184468358);
+	</script>	
+
+	<script type="text/javascript">		
+		
+		//tovar_id = '-93793008_964938';   		// - яблоки		
+		//$('[name="tovar1"]').attr("href", getTovarUrl(tovar_id));		// добавляем URL к ссылке <a href="">
+		//$('[name="gruppa1"]').attr("href", getGrouppaTovarovUrl("-13916738"));
+
+		//loadGruppaTovarov("-13916738");
+
+		var currentGroup;   // текущая выбранная группа товаров
+
+		// устанавливаем обработчик события click на все элементы <a>		
+		$('a').click(myClickHandler);
+		function myClickHandler(){
+			
+			if(currentGroup){			// если какая-то группа товаров уже выбрана
+				currentGroup.removeClass("pressed");
+			}			
+			currentGroup = $(this);
+			currentGroup.addClass("pressed");
+
+			$("#pravo").html("загружаем...");
+			let owner_id = $(this).attr("name");  //  Получаем owner_id из аттрибута name="..." тега <a>
+			loadGruppaTovarov(owner_id);		  //  Загружаем товары
+		}
+		
+		//  Подборки товаров:
+		// 		https://vk.com/market-93793008  - Райский сад		
+		//  	https://vk.com/market-128194899 - Поместье Огородников
+		//		https://vk.com/market-81509275  - Мастерская деревянной живописи "ПинескЪ"
+		//		https://vk.com/market-13916738	- Мастерская по дереву "Добрый лес"		
+	</script>
+
+</body>
+</html>
