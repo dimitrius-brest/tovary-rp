@@ -5,14 +5,24 @@
     <title>Товары Родовых поместий - React</title>
     <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-
     <!-- Не используйте это в production -->
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-
     <script src="https://unpkg.com/prop-types@15.6/prop-types.js"></script>
 </head>
 <body>
     <div id="root"></div>
+
+    <!--<script src="https://vk.com/js/api/openapi.js?162" type="text/javascript"></script>
+    <script type="text/javascript">
+        VK.init({
+            apiId: 7096616
+        });
+    </script>
+
+    <div id="vk_auth"></div>
+    <script type="text/javascript">
+        VK.Widgets.Auth('vk_auth', {});
+    </script> -->
 
     <script type="text/babel">
         class App extends React.Component {
@@ -25,6 +35,14 @@
                     <React.Fragment>
                         <h3>Сайт товаров Родовых поместий</h3>
                         <p>Теперь и на React</p>
+                        <p>
+                            <!-- Для локальной версии: 	http://localhost:8080/my/katalog.html						-->
+                            <!-- Для github версии: 	https://dimitrius-brest.github.io/tovary-rp/katalog.html 	-->
+                            <!--<a href="https://oauth.vk.com/authorize?client_id=7096616&display=page&redirect_uri=http://localhost:8080/my/index.html&response_type=token&v=5.101&state=123456&scope=market">-->
+                            <a href="https://oauth.vk.com/authorize?client_id=7096616&display=page&redirect_uri=https://dimitrius-brest.github.io/tovary-rp/index.html&response_type=token&v=5.101&state=123456&scope=market">
+                            Войти
+                            </a>
+                        </p>
                         <p>
                             (Старую версию без React см. <a href="https://dimitrius-brest.github.io/tovary-rp/version-1-0">здесь</a>)
                         </p>
