@@ -16,11 +16,18 @@
 
     <script type="text/babel">
         class App extends React.Component {
+            state = {
+                token: null
+            }
+
             render() {
                 return (
                     <React.Fragment>
                         <h3>Сайт товаров Родовых поместий</h3>
                         <p>Теперь и на React</p>
+                        <p>
+                            (Старую версию без React см. <a href="https://dimitrius-brest.github.io/tovary-rp/version-1-0">здесь</a>)
+                        </p>
                     </React.Fragment>
                 )
             }
